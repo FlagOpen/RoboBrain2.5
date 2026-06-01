@@ -45,7 +45,7 @@
 </div>
 
 ---
-**RoboBrain 2.0**, the previously most powerful open-source embodied brain model. Compared to its predecessor, RoboBrain 1.0, our latest version are designed to unify perception, reasoning, and planning for complex embodied tasks in physical environments. It comes in two variants: a lightweight 7B model and a full-scale 32B model, featuring a heterogeneous architecture with a vision encoder and a language model. Despite its compact size, RoboBrain 2.0 achieves strong performance 
+**RoboBrain 2.0**, the previously most powerful open-source embodied brain model. Compared to its predecessor, RoboBrain 1.0, our latest version is designed to unify perception, reasoning, and planning for complex embodied tasks in physical environments. It comes in two variants: a lightweight 7B model and a full-scale 32B model, featuring a heterogeneous architecture with a vision encoder and a language model. Despite its compact size, RoboBrain 2.0 achieves strong performance
 across a wide spectrum of embodied reasoning tasks. On both spatial and temporal benchmarks, the 32B variant achieves leading results in most cases, surpassing prior open-source and proprietary models.
 In particular, it supports key real-world embodied intelligence capabilities, including spatial understanding (e.g., affordance prediction, spatial referring, trajectory forecasting) and temporal decision-making (e.g., closed-loop interaction, multi-agent long-horizon planning, and real-time scene memory). This report details the model architecture, data construction, multi-stage training strategies, infrastructure and practical applications.
 
@@ -54,17 +54,17 @@ In particular, it supports key real-world embodied intelligence capabilities, in
 </div>
 
 ## 🗞️ News
-- **`2026-03-01`**: 🤗 [RoboBrain 2.5-4B](https://huggingface.co/BAAI/RoboBrain2.5-4B) model checkpoint has been released in Huggingface.
+- **`2026-03-01`**: 🤗 [RoboBrain 2.5-4B](https://huggingface.co/BAAI/RoboBrain2.5-4B) model checkpoint has been released on Hugging Face.
 - **`2026-01-09`**: 🤗 We released the **RoboBrain 2.5-8B** checkpoints on Hugging Face: [RoboBrain 2.5-8B-NV](https://huggingface.co/BAAI/RoboBrain2.5-8B-NV) and [RoboBrain 2.5-8B-MT](https://huggingface.co/BAAI/RoboBrain2.5-8B-MT). The two variants share the same architecture and training data with similar performance, but were trained on different clusters: ***NV*** on NVIDIA GPU cluster, and ***MT*** on Moore-Threads GPU cluster.
-- **`2025-12-30`**: 🔥 We released [**Robo-Dopamine**](https://robo-dopamine.github.io/), a deep research on Dense Temperal Value Estimation Capability for **RoboBrain 2.5**.
+- **`2025-12-30`**: 🔥 We released [**Robo-Dopamine**](https://robo-dopamine.github.io/), a deep research on Dense Temporal Value Estimation Capability for **RoboBrain 2.5**.
 - **`2025-12-16`**: 🔥 We released [**RoboTracer**](https://zhoues.github.io/RoboTracer/), a deep research on Native 3D Spatial Reasoning for **RoboBrain 2.5**.
 - **`2025-09-29`**: 🤖 We released a unified cross-embodiment VLA model [RoboBrain-X0-Preview](https://github.com/FlagOpen/RoboBrain-X0) based on RoboBrain 2.0 (3B version) on **CoRL 2025**.
 - **`2025-09-18`**: 🔥 [**Reason-RFT**](https://arxiv.org/abs/2503.20752) (Core Post-Training Strategy for RoboBrain2.0) gets accepted to **NeurIPS 2025**.
-- **`2025-07-23`**: 🤗 [RoboBrain 2.0-3B](https://huggingface.co/BAAI/RoboBrain2.0-3B) model checkpoint has been also released in Huggingface.
-- **`2025-07-03`**: 🤗 [RoboBrain 2.0-32B](https://huggingface.co/BAAI/RoboBrain2.0-32B) model checkpoint has been released in Huggingface.
+- **`2025-07-23`**: 🤗 [RoboBrain 2.0-3B](https://huggingface.co/BAAI/RoboBrain2.0-3B) model checkpoint has also been released on Hugging Face.
+- **`2025-07-03`**: 🤗 [RoboBrain 2.0-32B](https://huggingface.co/BAAI/RoboBrain2.0-32B) model checkpoint has been released on Hugging Face.
 - **`2025-06-11`**: 💡 We optimized the inference pipeline for **multi-task applications** in RoboBrain 2.0. Please refer to [Simple Inference](https://github.com/FlagOpen/RoboBrain2.0/tree/main?tab=readme-ov-file#-simple-inference) for quick usage (general & embodied).
 - **`2025-06-07`**: 🎉 We highlight the training framework ([FlagScale](https://github.com/FlagOpen/FlagScale)) developed by *BAAI Framework R&D team*, and the evaluation framework ([FlagEvalMM](https://github.com/flageval-baai/FlagEvalMM)) by *BAAI FlagEval team*. Both are used for RoboBrain 2.0. 
-- **`2025-06-06`**: 🤗 [RoboBrain 2.0-7B](https://huggingface.co/BAAI/RoboBrain2.0-7B) model checkpoint has been released in Huggingface.
+- **`2025-06-06`**: 🤗 [RoboBrain 2.0-7B](https://huggingface.co/BAAI/RoboBrain2.0-7B) model checkpoint has been released on Hugging Face.
 - **`2025-06-06`**: 🔥 We're excited to announce the release of our more powerful [RoboBrain 2.0](https://superrobobrain.github.io/).
 - **`2025-04-11`**: 🎉 [RoboBrain 1.0](https://github.com/FlagOpen/RoboBrain/) was selected for CVPR 2025's official [Embodied AI Trends Commentary](https://cvpr.thecvf.com/Conferences/2025/News/AI_Enhanced_Robotics).
 - **`2025-02-27`**: 🔥 [**RoboBrain 1.0**](http://arxiv.org/abs/2502.21257/) was accepted to **CVPR 2025**.
@@ -82,7 +82,7 @@ In particular, it supports key real-world embodied intelligence capabilities, in
 
 ## 🚀 Key Highlights
 
-### 1. Comprehensive Upgrade in ✨ Percise 3D Spatial Reasoning ✨ 
+### 1. Comprehensive Upgrade in ✨ Precise 3D Spatial Reasoning ✨
 Compared to version 2.0, **RoboBrain-2.5** achieves a leap in spatial perception and reasoning capabilities:
 *   **From 2D to 3D:** Upgraded from predicting coordinate points on 2D images to predicting coordinate points with depth information in **3D space** (3D Spatial Referring).
 *   **Relative to Absolute:** Evolved from understanding relative spatial relationships to measuring **absolute 3D spatial metric information** (3D Spatial Measuring). The model can comprehend precise physical constraint instructions (e.g., "hovering 1-5 cm above").
@@ -95,7 +95,7 @@ Compared to version 2.0, **RoboBrain-2.5** achieves a leap in spatial perception
 *   **Execution State Estimation:** Understands task goals and estimates various states during execution (e.g., success, failure, error occurrence).
 *   **Empowering VLA Reinforcement Learning:** Provides real-time, dense feedback signals and rewards for VLA (Vision-Language-Action) reinforcement learning. With only **one demonstration**, it achieves a task success rate of **95%+** in complex, fine-grained manipulations.
 
-### 3. More Powerful Core Capabilities from previous version 2.0
+### 3. More Powerful Core Capabilities from version 2.0
 **RoboBrain 2.5** also maintains the three core capabilities of version 2.0, which supports ***interactive reasoning*** with long-horizon planning and closed-loop feedback, ***spatial perception*** for precise point and bbox prediction from complex instructions, ***temporal perception*** for future trajectory estimation, and ***scene reasoning*** through real-time structured memory construction and update.
 
 <div align="center">
